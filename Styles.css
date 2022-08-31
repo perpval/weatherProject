@@ -1,0 +1,98 @@
+body {
+  border: none;
+  position: relative;
+  right: 350px;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-left: 700px;
+  padding-left: 20px;
+  background-image: url(image/pexels-photo-531767.webp);
+  background-repeat: no-repeat;
+  background-size: 620px 620px;
+  background-position: center;
+}
+form {
+  margin-top: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 390px;
+}
+h1,
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  margin-left: 20px;
+  position: relative;
+  top: -45px;
+}
+
+li {
+  position: relative;
+  top: -100px;
+  left: 420px;
+  list-style: none;
+  padding: 0px;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-size: 25px;
+  font-weight: 500;
+}
+.description{
+  font-family:"Roboto", sans-serif;
+  position: relative;
+  top: -90px;
+  right: -180px;
+  font-size: 25px;
+  font-weight: 400;
+}
+.btn-primary {
+  position: relative;
+  right: -415px;
+  top: -55px;
+}
+.btn-success {
+  position: relative;
+  right: -425px;
+  top: -55px;
+}
+}
+
+.city {
+  font-size: 20px;
+}
+.material-symbols-outlined {
+  position: relative;
+  left: 360px;
+  top: -110px;
+}
+.temp {
+  font-size: 48px;
+  font-family: "Roboto", sans-serif;
+}
+.celsius {
+  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  top: -16px;
+  color: #000000;
+  text-decoration: none;
+}
+
+
+.dayAndTime {
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  font-size: 25px;
+}
+.days {
+  position: relative;
+  top: -50px;
+  left: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+.thurs {
+  position: relative;
+  left: 9px;
+}
