@@ -20,6 +20,15 @@ function weatherDetails(response) {
   visibility.innerHTML = Math.round(response.data.visibility / 1000);
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
+  let weatherEmoji = document.querySelector("#weather-emoji");
+  weatherEmoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherEmoji.setAttribute(
+    "alt",
+    `${response.data.weather[0].description} icon`
+  );
 }
 
 let searchButton = document.querySelector("#search-button");
