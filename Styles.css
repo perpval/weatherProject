@@ -37,11 +37,11 @@ li {
   font-size: 25px;
   font-weight: 500;
 }
-.description{
-  font-family:"Roboto", sans-serif;
+.description {
+  font-family: "Roboto", sans-serif;
   position: relative;
-  top: -90px;
-  right: -180px;
+  top: -70px;
+  left: 20px;
   font-size: 25px;
   font-weight: 400;
 }
@@ -55,7 +55,6 @@ li {
   right: -425px;
   top: -55px;
 }
-}
 
 .city {
   font-size: 20px;
@@ -68,16 +67,36 @@ li {
 .temp {
   font-size: 48px;
   font-family: "Roboto", sans-serif;
+  position: relative;
+  left: -10px;
 }
+
+.fahrenheit,
 .celsius {
   font-size: 28px;
   font-family: "Roboto", sans-serif;
   position: relative;
   top: -16px;
-  color: #000000;
+  color: #005792;
   text-decoration: none;
 }
+.colorChange {
+  color: #000;
+}
+.celsius:hover {
+  cursor: default;
+  color: #005792;
+}
+.fahrenheit:hover {
+  cursor: default;
+  color: #005792;
+}
 
+.pipe {
+  position: relative;
+  top: -16px;
+  font-size: 30px;
+}
 
 .dayAndTime {
   font-family: "Raleway", sans-serif;
