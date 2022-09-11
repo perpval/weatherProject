@@ -3,17 +3,17 @@ body {
   position: relative;
   right: 350px;
   border-radius: 20px;
-  margin-top: 30px;
   margin-left: 700px;
   padding-left: 20px;
   background-image: url(image/pexels-photo-531767.webp);
   background-repeat: no-repeat;
-  background-size: 620px 620px;
+  background-size: 650px 630px;
   background-position: center;
 }
 form {
-  margin-top: 20px;
-  padding-top: 30px;
+  margin-top: 80px;
+  position: relative;
+  top: -100x;
   padding-bottom: 30px;
   width: 390px;
 }
@@ -59,11 +59,7 @@ li {
 .city {
   font-size: 20px;
 }
-.material-symbols-outlined {
-  position: relative;
-  left: 360px;
-  top: -110px;
-}
+
 .temp {
   font-size: 48px;
   font-family: "Roboto", sans-serif;
@@ -83,13 +79,16 @@ li {
 .colorChange {
   color: #000;
 }
+
+.colorChange:hover {
+  color: #000;
+}
+
 .celsius:hover {
   cursor: default;
-  color: #005792;
 }
 .fahrenheit:hover {
   cursor: default;
-  color: #005792;
 }
 
 .pipe {
