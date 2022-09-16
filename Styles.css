@@ -7,7 +7,7 @@ body {
   padding-left: 20px;
   background-image: url(image/pexels-photo-531767.webp);
   background-repeat: no-repeat;
-  background-size: 650px 650px;
+  background-size: 700px 700px;
   background-position: center;
 }
 form {
@@ -67,34 +67,12 @@ li {
   left: -10px;
 }
 
-.fahrenheit,
 .celsius {
   font-size: 28px;
   font-family: "Roboto", sans-serif;
   position: relative;
   top: -16px;
-  color: #005792;
-  text-decoration: none;
-}
-.colorChange {
   color: #000;
-}
-
-.colorChange:hover {
-  color: #000;
-}
-
-.celsius:hover {
-  cursor: default;
-}
-.fahrenheit:hover {
-  cursor: default;
-}
-
-.pipe {
-  position: relative;
-  top: -16px;
-  font-size: 30px;
 }
 
 .dayAndTime {
@@ -114,7 +92,10 @@ li {
 .miniTemp {
   opacity: 0.7;
 }
-.weatherIcon {
+.name {
   position: relative;
-  left: -40px;
+  top: 20px;
+  padding-bottom: 10px;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-size: 30px;
 }

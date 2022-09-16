@@ -79,6 +79,7 @@ function weatherDetails(response) {
 }
 
 function showDaysForecast(response) {
+  console.log(response);
   daysForecast = response.data.daily;
   daysForecast.forEach(function (theForecast, index) {
     let oneDay = new Date(theForecast.dt * 1000);
@@ -93,8 +94,8 @@ function showDaysForecast(response) {
           <div class="row">
             <div class="col-12"><img src="http://openweathermap.org/img/wn/${
               theForecast.weather[0].icon
-            }@2x.png" alt="weather icon" class="weatherIcon" /></div>
-            <div class="col-12" id ="maximumTemp">${Math.round(
+            }@2x.png" alt="weather icon" class="weatherIcon" width = 60 /></div>
+            <div class="col" id ="maximumTemp">${Math.round(
               theForecast.temp.max
             )}℃</div>
             <div class="col miniTemp" id ="minimumTemp">${Math.round(
@@ -108,29 +109,7 @@ function showDaysForecast(response) {
   otherDays.innerHTML = forecast;
 }
 
-function fahrenheitTemperature(event) {
-  event.preventDefault();
-  document.querySelector("#temperature").innerHTML = Math.round(
-    (celsiusTemp * 9) / 5 + 32
-  );
-  celsius.classList.remove("colorChange");
-  fahrenheit.classList.add("colorChange");
-}
-
-function celsiusTemperature(event) {
-  event.preventDefault();
-  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
-  celsius.classList.add("colorChange");
-  fahrenheit.classList.remove("colorChange");
-}
-
 let celsiusTemp = null;
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", fahrenheitTemperature);
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", celsiusTemperature);
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getLocation);
