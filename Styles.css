@@ -92,6 +92,10 @@ li {
 .miniTemp {
   opacity: 0.7;
 }
+.weatherIcon {
+  position: relative;
+  left: -10px;
+}
 .name {
   position: relative;
   top: 20px;

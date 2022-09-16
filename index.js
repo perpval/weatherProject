@@ -23,8 +23,7 @@ function theTime(date) {
 }
 theTime(new Date());
 
-function weather(event) {
-  event.preventDefault();
+function weather() {
   let apiKey = "b19f4df02ac912fe1dad7424873d1b77";
   let city = document.querySelector("#city-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -80,6 +79,7 @@ function weatherDetails(response) {
 
 function showDaysForecast(response) {
   console.log(response);
+  let forecast = `<div id="days" class="row days">`;
   daysForecast = response.data.daily;
   daysForecast.forEach(function (theForecast, index) {
     let oneDay = new Date(theForecast.dt * 1000);
@@ -118,7 +118,5 @@ let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", weather);
 
 let otherDays = document.querySelector("#days");
-
-let forecast = `<div id="days" class="row days">`;
 
 onLoading("Accra");
