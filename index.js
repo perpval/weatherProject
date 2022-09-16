@@ -30,6 +30,7 @@ function weather(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherDetails);
 }
+
 function getLocation() {
   navigator.geolocation.getCurrentPosition(cityCoords);
 }
@@ -40,6 +41,7 @@ function cityCoords(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherDetails);
 }
+
 function onLoading(city) {
   let apiKey = "b19f4df02ac912fe1dad7424873d1b77";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -67,17 +69,43 @@ function weatherDetails(response) {
   );
   weatherEmoji.setAttribute(
     "alt",
-    `${response.data.weather[0].description} icon`
+    `${response.data.weather[0].description}  icon`
   );
-
-  let daysApiKey = "a43564c91a6c605aeb564c9ed02e3858";
   let lat = response.data.coord.lat;
   let lon = response.data.coord.lon;
+  let daysApiKey = "a43564c91a6c605aeb564c9ed02e3858";
   let daysApiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${daysApiKey}&units=metric`;
   axios.get(daysApiUrl).then(showDaysForecast);
 }
+
 function showDaysForecast(response) {
-  console.log(response.data.daily);
+  daysForecast = response.data.daily;
+  daysForecast.forEach(function (theForecast, index) {
+    let oneDay = new Date(theForecast.dt * 1000);
+    oneDay = oneDay.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let day = days[oneDay];
+    if (index < 5) {
+      forecast =
+        forecast +
+        `<div class="col-2">
+          ${day}
+          <div class="row">
+            <div class="col-12"><img src="http://openweathermap.org/img/wn/${
+              theForecast.weather[0].icon
+            }@2x.png" alt="weather icon" class="weatherIcon" /></div>
+            <div class="col-12" id ="maximumTemp">${Math.round(
+              theForecast.temp.max
+            )}℃</div>
+            <div class="col miniTemp" id ="minimumTemp">${Math.round(
+              theForecast.temp.min
+            )}℃</div>
+          </div>
+        </div>`;
+    }
+  });
+  forecast = forecast + `</div>`;
+  otherDays.innerHTML = forecast;
 }
 
 function fahrenheitTemperature(event) {
@@ -111,24 +139,7 @@ let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", weather);
 
 let otherDays = document.querySelector("#days");
-let forecast = "";
-forecast = `<div id="days" class="row days">`;
 
-let days = ["Mon", "Tues", "Wed", "Thurs", "Fri"];
-days.forEach(function (day) {
-  otherDays =
-    forecast +
-    `<div class="col-2">
-      ${day}
-      <div class="row">
-        <div class="col-12 thurs">⛅</div>
-        <div class="col-12">27℃</div>
-        <div class="col">23℃</div>
-      </div>
-    </div>`;
-});
-otherDays.innerHTML = `otherDays + </div>`;
+let forecast = `<div id="days" class="row days">`;
 
 onLoading("Accra");
-let day = new Date(Date.now());
-console.log(day.getDay());
