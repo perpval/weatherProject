@@ -23,7 +23,8 @@ function theTime(date) {
 }
 theTime(new Date());
 
-function weather() {
+function weather(event) {
+  event.preventDefault();
   let apiKey = "b19f4df02ac912fe1dad7424873d1b77";
   let city = document.querySelector("#city-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -114,8 +115,8 @@ let celsiusTemp = null;
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getLocation);
 
-let searchButton = document.querySelector("#search-button");
-searchButton.addEventListener("click", weather);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", weather);
 
 let otherDays = document.querySelector("#days");
 
