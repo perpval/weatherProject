@@ -65,7 +65,7 @@ function weatherDetails(response) {
   let weatherEmoji = document.querySelector("#weather-emoji");
   weatherEmoji.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherEmoji.setAttribute(
     "alt",
